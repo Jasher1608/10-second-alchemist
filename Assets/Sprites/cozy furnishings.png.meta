@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 1fa3e097976a9b743ad69cc07f5fa320
+guid: 92026117d8ba40a4ab8d0cc2e0a8bb0c
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,13 +123,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: alchemy gear 16x48_0
+      name: cozy furnishings_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 16
-        height: 48
+        x: 176
+        y: 81
+        width: 48
+        height: 26
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,50 +137,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b81d946d579aa50428e62fde2739776f
-      internalID: 1192257282
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: alchemy gear 16x48_1
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 0
-        width: 16
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5836f408eacbd514db7e64c4d05f8daf
-      internalID: -1158333557
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: alchemy gear 16x48_2
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 0
-        width: 16
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a27f6ecdaef66ce4b925d3659416d61b
-      internalID: -674915874
+      spriteID: faed38cbd92bb6843b8e088ecf7b41eb
+      internalID: 1756760109
       vertices: []
       indices: 
       edges: []
@@ -196,9 +154,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      alchemy gear 16x48_0: 1192257282
-      alchemy gear 16x48_1: -1158333557
-      alchemy gear 16x48_2: -674915874
+      cozy furnishings_0: 1756760109
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
