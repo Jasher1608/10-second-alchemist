@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d3830ce1c578a1a468df6ba93004549c
+guid: 0f124ca8120c0cd4586b85c895e95838
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,7 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - BitPotion
+  - Wizard Of The Moon
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0
