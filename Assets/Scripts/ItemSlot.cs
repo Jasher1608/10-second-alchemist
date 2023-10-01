@@ -12,7 +12,7 @@ public class ItemSlot : MonoBehaviour, IDropHandler
     public void OnDrop(PointerEventData eventData)
     {
         //Debug.Log("OnDrop");
-        if (eventData.pointerDrag != null)
+        if (eventData.pointerDrag != null && GameController.state == State.Gameplay)
         {
             GetComponent<Image>().sprite = eventData.pointerDrag.GetComponent<Image>().sprite;
             image.color = new Color(image.color.r, image.color.g, image.color.b, 1);

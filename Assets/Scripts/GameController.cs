@@ -7,17 +7,25 @@ public class GameController : MonoBehaviour
 {
     
     public static State state;
-    public GameObject nextLevel;
+
+    [SerializeField] private int difficulty = 1;
 
     public List<Sprite> ingredients = new List<Sprite>();
     public List<GameObject> slots = new List<GameObject>();
     private List<Sprite> targetIngredient = new List<Sprite>();
     private List<bool> correctIngredient = new List<bool>();
 
-    [SerializeField] private float previewDuration;
+    private float previewDuration;
+
+    [SerializeField] private ParticleSystem explosionParticleEffect = default;
+
+    [SerializeField] private Canvas canvas;
+    [SerializeField] private float rotationSpeed;
 
     private void Start()
     {
+        correctIngredient.Clear();
+        targetIngredient.Clear();
         state = State.Intro;
         for (int i = 0; i < slots.Count; i++)
         {
@@ -38,6 +46,10 @@ public class GameController : MonoBehaviour
                 state = State.OutroLose;
                 StartOutroLose();
             }
+        }
+        else if (state == State.OutroWin)
+        {
+            SpinBoard();
         }
     }
 
@@ -74,7 +86,7 @@ public class GameController : MonoBehaviour
         if (correctIngredient.TrueForAll(AllTrue))
         {
             state = State.OutroWin;
-            StartOutroWin();
+            StartCoroutine(StartOutroWin(3));
         }
     }
 
@@ -85,6 +97,18 @@ public class GameController : MonoBehaviour
 
     private IEnumerator StartGameplay()
     {
+        switch (difficulty)
+        {
+            case 1:
+                previewDuration = 3;
+                break;
+            case 2:
+                previewDuration = 2;
+                break;
+            case 3:
+                previewDuration = 1;
+                break;
+        }
         yield return new WaitForSeconds(previewDuration);
 
         for (int i = 0; i < slots.Count; i++)
@@ -98,22 +122,32 @@ public class GameController : MonoBehaviour
         TimerController.timeRemaining = 10f;
     }
 
-    private void StartOutroWin()
+    private IEnumerator StartOutroWin(float waitDuration)
     {
-        if (nextLevel != null)
+        yield return new WaitForSeconds(waitDuration);
+        explosionParticleEffect.Play();
+        transform.rotation = Quaternion.Euler(12.5f, 0, 0);
+        difficulty += 1;
+
+        for (int i = 0; i < slots.Count; i++)
         {
-            nextLevel.SetActive(true);
-            this.gameObject.SetActive(false);
+            slots[i].GetComponent<Image>().sprite = null;
+            Image tempSlotImage;
+            tempSlotImage = slots[i].GetComponent<Image>();
+            tempSlotImage.color = new Color(tempSlotImage.color.r, tempSlotImage.color.g, tempSlotImage.color.b, 0f);
         }
-        else if (nextLevel == null)
-        {
-            Debug.Log("You Win!");
-        }
+
+        Start();
     }
 
     private void StartOutroLose()
     {
         Debug.Log("You lose!");
+    }
+
+    private void SpinBoard()
+    {
+        this.gameObject.transform.Rotate(0f, 0f, rotationSpeed * Time.deltaTime);
     }
 }
 
