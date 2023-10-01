@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class GameController : MonoBehaviour
 {
@@ -22,8 +23,13 @@ public class GameController : MonoBehaviour
     [SerializeField] private Canvas canvas;
     [SerializeField] private float rotationSpeed;
 
+    [SerializeField] private TextMeshProUGUI lossText;
+    [SerializeField] private TextMeshProUGUI timerText;
+
     private void Start()
     {
+        timerText.text = "10";
+        difficulty = 1;
         correctIngredient.Clear();
         targetIngredient.Clear();
         state = State.Intro;
@@ -50,6 +56,14 @@ public class GameController : MonoBehaviour
         else if (state == State.OutroWin)
         {
             SpinBoard();
+        }
+        else if (state == State.OutroLose)
+        {
+            if (Input.GetKeyUp(KeyCode.R))
+            {
+                lossText.gameObject.SetActive(false);
+                Start();
+            }
         }
     }
 
@@ -119,7 +133,6 @@ public class GameController : MonoBehaviour
             tempSlotImage.color = new Color(tempSlotImage.color.r, tempSlotImage.color.g, tempSlotImage.color.b, 0f);
         }
         state = State.Gameplay;
-        TimerController.timeRemaining = 10f;
     }
 
     private IEnumerator StartOutroWin(float waitDuration)
@@ -142,7 +155,7 @@ public class GameController : MonoBehaviour
 
     private void StartOutroLose()
     {
-        Debug.Log("You lose!");
+        lossText.gameObject.SetActive(true);
     }
 
     private void SpinBoard()
