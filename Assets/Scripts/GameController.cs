@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
     
     public static State state;
+    public static int level = 1;
 
     [SerializeField] private int difficulty = 1;
 
@@ -28,8 +30,8 @@ public class GameController : MonoBehaviour
 
     private void Start()
     {
+        TimerController.timeRemaining = 10;
         timerText.text = "10";
-        difficulty = 1;
         correctIngredient.Clear();
         targetIngredient.Clear();
         state = State.Intro;
@@ -62,6 +64,7 @@ public class GameController : MonoBehaviour
             if (Input.GetKeyUp(KeyCode.R))
             {
                 lossText.gameObject.SetActive(false);
+                difficulty = 1;
                 Start();
             }
         }
@@ -150,7 +153,16 @@ public class GameController : MonoBehaviour
             tempSlotImage.color = new Color(tempSlotImage.color.r, tempSlotImage.color.g, tempSlotImage.color.b, 0f);
         }
 
-        Start();
+        if (difficulty <= 3)
+        {
+            Start();
+        }
+        else if (difficulty > 3 && level == 1)
+        {
+            level += 1;
+            difficulty = 1;
+            SceneManager.LoadScene("Cutscene01", LoadSceneMode.Single);
+        }
     }
 
     private void StartOutroLose()
