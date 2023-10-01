@@ -142,7 +142,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &90417032
 RectTransform:
   m_ObjectHideFlags: 0
@@ -253,7 +253,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: <wiggle a=0.5>Fire Potion</>!
+  m_text: <wiggle a=0.5><flame>Fire Potion</>!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ce9acc65904eec64ba473c99be818c45, type: 2}
   m_sharedMaterial: {fileID: -8865677664780795469, guid: ce9acc65904eec64ba473c99be818c45, type: 2}
@@ -262,10 +262,10 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278213119
-  m_fontColor: {r: 1, g: 0.34757438, b: 0, a: 1}
-  m_enableVertexGradient: 1
-  m_colorMode: 3
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 2
   m_fontColorGradient:
     topLeft: {r: 1, g: 1, b: 1, a: 1}
     topRight: {r: 1, g: 1, b: 1, a: 1}
@@ -425,7 +425,7 @@ SpriteRenderer:
   m_SortingLayerID: -413782181
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 826293964, guid: 47bf25b00e0fe66429e24f5657bcecfd, type: 3}
+  m_Sprite: {fileID: 278912875, guid: 47bf25b00e0fe66429e24f5657bcecfd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
