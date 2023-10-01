@@ -11,6 +11,9 @@ public class GameController : MonoBehaviour
     public List<Sprite> ingredients = new List<Sprite>();
     public List<GameObject> slots = new List<GameObject>();
     private List<Sprite> targetIngredient = new List<Sprite>();
+    private List<bool> correctIngredient = new List<bool>();
+
+    [SerializeField] private float previewDuration;
 
     private void Start()
     {
@@ -18,8 +21,22 @@ public class GameController : MonoBehaviour
         for (int i = 0; i < slots.Count; i++)
         {
             targetIngredient.Add(ingredients[Random.Range(0, ingredients.Count)]); // Sets the desired ingredient for each slot
+            correctIngredient.Add(false);
         }
 
+        PreviewIngredients();
+    }
+
+    private void Update()
+    {
+        if (state == State.Gameplay)
+        {
+            CheckSlotMatch();
+        }
+    }
+
+    private void PreviewIngredients()
+    {
         for (int i = 0; i < slots.Count; i++)
         {
             Image tempSlotImage;
@@ -27,21 +44,63 @@ public class GameController : MonoBehaviour
             tempSlotImage.sprite = targetIngredient[i];
             tempSlotImage.color = new Color(tempSlotImage.color.r, tempSlotImage.color.g, tempSlotImage.color.b, 0.5f);
         }
-    }
 
-    private void Update()
-    {
-        
-    }
-
-    private void PreviewIngredients()
-    {
-
+        StartCoroutine("StartGameplay");
     }
     
     private void CheckSlotMatch()
     {
-        
+        for (int i = 0; i < slots.Count; i++)
+        {
+            Image tempSlotImage;
+            tempSlotImage = slots[i].GetComponent<Image>();
+            if (tempSlotImage.sprite == targetIngredient[i])
+            {
+                correctIngredient[i] = true;
+            }
+            else if (tempSlotImage.sprite != targetIngredient[i])
+            {
+                tempSlotImage.sprite = null;
+                tempSlotImage.color = new Color(tempSlotImage.color.r, tempSlotImage.color.g, tempSlotImage.color.b, 0f);
+            }
+        }
+
+        if (correctIngredient.TrueForAll(AllTrue))
+        {
+            StartOutroWin();
+        }
+    }
+
+    private bool AllTrue(bool b)
+    {
+        return b;
+    }
+
+    private IEnumerator StartGameplay()
+    {
+        yield return new WaitForSeconds(previewDuration);
+
+        for (int i = 0; i < slots.Count; i++)
+        {
+            slots[i].GetComponent<Image>().sprite = null;
+            Image tempSlotImage;
+            tempSlotImage = slots[i].GetComponent<Image>();
+            tempSlotImage.color = new Color(tempSlotImage.color.r, tempSlotImage.color.g, tempSlotImage.color.b, 0f);
+        }
+        state = State.Gameplay;
+    }
+
+    private void StartOutroWin()
+    {
+        if (nextLevel != null)
+        {
+            nextLevel.SetActive(true);
+            this.gameObject.SetActive(false);
+        }
+        else if (nextLevel == null)
+        {
+            Debug.Log("You Win!");
+        }
     }
 }
 
@@ -49,5 +108,6 @@ public enum State
 {
     Intro, // Start of level, where ingredients get flashed for a short amount of time
     Gameplay, // Main part of level, where players must match ingredients
-    Outro // End of level, where level transitions to the next level
+    OutroWin, // End of level, where level transitions to the next level
+    OutroLose // End of level, where player failed
 }
