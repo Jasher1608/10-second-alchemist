@@ -28,15 +28,23 @@ public class GameController : MonoBehaviour
     [SerializeField] private TextMeshProUGUI lossText;
     [SerializeField] private TextMeshProUGUI timerText;
 
+    private string nextScene;
+
     private void Start()
     {
         switch (SceneManager.GetActiveScene().name)
         {
             case "Level01":
                 level = 1;
+                nextScene = "Cutscene01";
                 break;
             case "Level02":
                 level = 2;
+                nextScene = "Cutscene02";
+                break;
+            case "Level03":
+                level = 3;
+                nextScene = "Main Menu";
                 break;
         }
 
@@ -154,7 +162,22 @@ public class GameController : MonoBehaviour
                     break;
             }
         }
-        
+        else if (level == 3)
+        {
+            switch (difficulty)
+            {
+                case 1:
+                    previewDuration = 3.33f;
+                    break;
+                case 2:
+                    previewDuration = 2.5f;
+                    break;
+                case 3:
+                    previewDuration = 2f;
+                    break;
+            }
+        }
+
         yield return new WaitForSeconds(previewDuration);
 
         for (int i = 0; i < slots.Count; i++)
@@ -190,13 +213,14 @@ public class GameController : MonoBehaviour
         {
             level += 1;
             difficulty = 1;
-            SceneManager.LoadScene("Cutscene01", LoadSceneMode.Single);
+            StartCoroutine(LoadNextScene(0.75f));
+            
         }
         else if (difficulty > 3 && level == 2)
         {
             level += 1;
             difficulty = 1;
-            // Load cutscene02
+            StartCoroutine(LoadNextScene(0.75f));
         }
     }
 
@@ -208,6 +232,12 @@ public class GameController : MonoBehaviour
     private void SpinBoard()
     {
         this.gameObject.transform.Rotate(0f, 0f, rotationSpeed * Time.deltaTime);
+    }
+
+    private IEnumerator LoadNextScene(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        SceneManager.LoadScene(nextScene, LoadSceneMode.Single);
     }
 }
 

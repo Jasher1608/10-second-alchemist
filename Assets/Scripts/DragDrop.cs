@@ -46,10 +46,8 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
     public void OnEndDrag(PointerEventData eventData)
     {
         //Debug.Log("OnEndDrag");
-        if (GameController.state == State.Gameplay)
-        {
-            Destroy(instantiated);
-        }
+        Destroy(instantiated);
+
     }
 
     public void OnDrop(PointerEventData eventData)

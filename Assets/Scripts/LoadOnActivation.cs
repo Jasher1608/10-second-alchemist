@@ -14,6 +14,9 @@ public class LoadOnActivation : MonoBehaviour
             case 2:
                 SceneManager.LoadScene("Level02", LoadSceneMode.Single);
                 break;
+            case 3:
+                SceneManager.LoadScene("Level03", LoadSceneMode.Single);
+                break;
         }
     }
 }
