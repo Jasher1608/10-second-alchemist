@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
-    public State state;
+    
+    public static State state;
     public GameObject nextLevel;
 
     public List<Sprite> ingredients = new List<Sprite>();
@@ -32,6 +33,11 @@ public class GameController : MonoBehaviour
         if (state == State.Gameplay)
         {
             CheckSlotMatch();
+            if (TimerController.timeRemaining <= 0)
+            {
+                state = State.OutroLose;
+                StartOutroLose();
+            }
         }
     }
 
@@ -67,6 +73,7 @@ public class GameController : MonoBehaviour
 
         if (correctIngredient.TrueForAll(AllTrue))
         {
+            state = State.OutroWin;
             StartOutroWin();
         }
     }
@@ -88,6 +95,7 @@ public class GameController : MonoBehaviour
             tempSlotImage.color = new Color(tempSlotImage.color.r, tempSlotImage.color.g, tempSlotImage.color.b, 0f);
         }
         state = State.Gameplay;
+        TimerController.timeRemaining = 10f;
     }
 
     private void StartOutroWin()
@@ -101,6 +109,11 @@ public class GameController : MonoBehaviour
         {
             Debug.Log("You Win!");
         }
+    }
+
+    private void StartOutroLose()
+    {
+        Debug.Log("You lose!");
     }
 }
 
