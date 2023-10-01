@@ -224,7 +224,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4843785553879811236
 Transform:
   m_ObjectHideFlags: 0
@@ -305,7 +305,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73ac2b5105d574648b7dc128598470d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextLevel: {fileID: 0}
+  difficulty: 1
   ingredients:
   - {fileID: 114214564, guid: afea76938732a574b9d413165e40f2b1, type: 3}
   - {fileID: -326161426, guid: afea76938732a574b9d413165e40f2b1, type: 3}
@@ -324,9 +324,11 @@ MonoBehaviour:
   - {fileID: 6521084676020894784}
   - {fileID: 6646329643979459891}
   - {fileID: 7309633977608652814}
-  previewDuration: 3
   explosionParticleEffect: {fileID: 0}
+  canvas: {fileID: 9138899579614323907}
   rotationSpeed: 100
+  lossText: {fileID: 0}
+  timerText: {fileID: 0}
 --- !u!1 &6521084676020894784
 GameObject:
   m_ObjectHideFlags: 0

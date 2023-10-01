@@ -30,6 +30,16 @@ public class GameController : MonoBehaviour
 
     private void Start()
     {
+        switch (SceneManager.GetActiveScene().name)
+        {
+            case "Level01":
+                level = 1;
+                break;
+            case "Level02":
+                level = 2;
+                break;
+        }
+
         TimerController.timeRemaining = 10;
         timerText.text = "10";
         correctIngredient.Clear();
@@ -114,18 +124,37 @@ public class GameController : MonoBehaviour
 
     private IEnumerator StartGameplay()
     {
-        switch (difficulty)
+        if (level == 1)
         {
-            case 1:
-                previewDuration = 3;
-                break;
-            case 2:
-                previewDuration = 2;
-                break;
-            case 3:
-                previewDuration = 1;
-                break;
+            switch (difficulty)
+            {
+                case 1:
+                    previewDuration = 3;
+                    break;
+                case 2:
+                    previewDuration = 2;
+                    break;
+                case 3:
+                    previewDuration = 1;
+                    break;
+            }
         }
+        else if (level == 2)
+        {
+            switch (difficulty)
+            {
+                case 1:
+                    previewDuration = 3;
+                    break;
+                case 2:
+                    previewDuration = 2.33f;
+                    break;
+                case 3:
+                    previewDuration = 1.5f;
+                    break;
+            }
+        }
+        
         yield return new WaitForSeconds(previewDuration);
 
         for (int i = 0; i < slots.Count; i++)
@@ -162,6 +191,12 @@ public class GameController : MonoBehaviour
             level += 1;
             difficulty = 1;
             SceneManager.LoadScene("Cutscene01", LoadSceneMode.Single);
+        }
+        else if (difficulty > 3 && level == 2)
+        {
+            level += 1;
+            difficulty = 1;
+            // Load cutscene02
         }
     }
 
