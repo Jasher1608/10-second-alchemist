@@ -229,8 +229,6 @@ public class GameController : MonoBehaviour
         }
         else if (difficulty > 3 && level == 3)
         {
-            level += 1;
-            difficulty = 1;
             winText.gameObject.SetActive(true);
         }
     }
