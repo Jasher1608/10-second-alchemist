@@ -26,6 +26,7 @@ public class GameController : MonoBehaviour
     [SerializeField] private float rotationSpeed;
 
     [SerializeField] private TextMeshProUGUI lossText;
+    [SerializeField] private TextMeshProUGUI winText;
     [SerializeField] private TextMeshProUGUI timerText;
 
     private string nextScene;
@@ -44,7 +45,7 @@ public class GameController : MonoBehaviour
                 break;
             case "Level03":
                 level = 3;
-                nextScene = "Main Menu";
+                nextScene = "Intro Cutscene";
                 break;
         }
 
@@ -76,6 +77,10 @@ public class GameController : MonoBehaviour
         else if (state == State.OutroWin)
         {
             SpinBoard();
+            if (difficulty > 3 && level == 3 && Input.GetKeyUp(KeyCode.R))
+            {
+                StartCoroutine(LoadNextScene(0.75f));
+            }
         }
         else if (state == State.OutroLose)
         {
@@ -221,6 +226,12 @@ public class GameController : MonoBehaviour
             level += 1;
             difficulty = 1;
             StartCoroutine(LoadNextScene(0.75f));
+        }
+        else if (difficulty > 3 && level == 3)
+        {
+            level += 1;
+            difficulty = 1;
+            winText.gameObject.SetActive(true);
         }
     }
 
