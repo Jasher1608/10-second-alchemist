@@ -215,7 +215,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!224 &58467012
 RectTransform:
@@ -234,7 +234,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 340, y: 0}
+  m_SizeDelta: {x: 430, y: 0}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &58467013
 MonoBehaviour:
@@ -631,7 +631,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &348647148
 Transform:
@@ -985,7 +985,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: '<incr>Failed!</>
 
-    Press ''R'' to try again'
+    Tap anywhere to try again'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8c82f5233ac028b4ca2ece952980610a, type: 2}
   m_sharedMaterial: {fileID: -115147388619095193, guid: 8c82f5233ac028b4ca2ece952980610a, type: 2}
@@ -1108,7 +1108,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 899.191, y: 50}
+  m_SizeDelta: {x: 1103.996, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &622287727
 GameObject:
@@ -1449,7 +1449,7 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 1920, y: 1080}
+  m_ReferenceResolution: {x: 2556, y: 1179}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -2255,7 +2255,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1266759293
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2273,7 +2273,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 899.191, y: 50}
+  m_SizeDelta: {x: 1154.4956, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1266759294
 MonoBehaviour:
@@ -2292,7 +2292,7 @@ MonoBehaviour:
   timeScale: 0
   _text: '<rainb>Congratulations!</>
 
-    Press ''R'' to play again'
+    Tap anywhere to play again'
   useDynamicScaling: 1
   referenceFontSize: 10
   isResettingTimeOnNewText: 1
@@ -2328,7 +2328,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: '<rainb>Congratulations!</>
 
-    Press ''R'' to play again'
+    Tap anywhere to play again'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8c82f5233ac028b4ca2ece952980610a, type: 2}
   m_sharedMaterial: {fileID: -115147388619095193, guid: 8c82f5233ac028b4ca2ece952980610a, type: 2}
@@ -7894,7 +7894,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1955069069
 Transform:
@@ -8024,14 +8024,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: 10
+    m_Left: 30
     m_Right: 0
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 3
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 150, y: 150}
+  m_CellSize: {x: 175, y: 175}
   m_Spacing: {x: 20, y: 20}
   m_Constraint: 1
   m_ConstraintCount: 2

@@ -527,7 +527,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &237835586
 Transform:
@@ -6222,7 +6222,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!224 &879686568
 RectTransform:
@@ -6241,7 +6241,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 340, y: 0}
+  m_SizeDelta: {x: 430, y: 0}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &879686569
 MonoBehaviour:
@@ -6663,7 +6663,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 899.191, y: 50}
+  m_SizeDelta: {x: 1103.9958, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1199825499
 MonoBehaviour:
@@ -6680,14 +6680,16 @@ MonoBehaviour:
   typewriterStartsAutomatically: 0
   animationLoop: 0
   timeScale: 0
-  _text: 
+  _text: '<incr>Failed!</>
+
+    Tap anywhere to try again'
   useDynamicScaling: 1
   referenceFontSize: 10
   isResettingTimeOnNewText: 1
   useDefaultDatabases: 1
-  databaseBehaviors: {fileID: 0}
-  databaseAppearances: {fileID: 0}
-  databaseActions: {fileID: 0}
+  databaseBehaviors: {fileID: 11400000, guid: 65e7abee56f43bf4183ddc85711b6aea, type: 2}
+  databaseAppearances: {fileID: 11400000, guid: 935d5fe31c10b2744a5a6e5b8a796780, type: 2}
+  databaseActions: {fileID: 11400000, guid: 38ec7310cb00d7c45a7a4bbe79cd1bf5, type: 2}
   defaultAppearancesTags:
   - size
   defaultDisappearancesTags:
@@ -6716,7 +6718,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: '<incr>Failed!</>
 
-    Press ''R'' to try again'
+    Tap anywhere to try again'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8c82f5233ac028b4ca2ece952980610a, type: 2}
   m_sharedMaterial: {fileID: -115147388619095193, guid: 8c82f5233ac028b4ca2ece952980610a, type: 2}
@@ -7690,7 +7692,7 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 1920, y: 1080}
+  m_ReferenceResolution: {x: 2556, y: 1179}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -7804,14 +7806,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: 10
+    m_Left: 30
     m_Right: 0
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 3
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 150, y: 150}
+  m_CellSize: {x: 175, y: 175}
   m_Spacing: {x: 20, y: 20}
   m_Constraint: 1
   m_ConstraintCount: 2
@@ -7829,7 +7831,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2052737012
 Transform:

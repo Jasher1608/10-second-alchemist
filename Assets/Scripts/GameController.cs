@@ -77,14 +77,14 @@ public class GameController : MonoBehaviour
         else if (state == State.OutroWin)
         {
             SpinBoard();
-            if (difficulty > 3 && level == 3 && Input.GetKeyUp(KeyCode.R))
+            if (difficulty > 3 && level == 3 && Input.touchCount > 0 && Input.touches[0].phase == TouchPhase.Began)
             {
                 StartCoroutine(LoadNextScene(0.75f));
             }
         }
         else if (state == State.OutroLose)
         {
-            if (Input.GetKeyUp(KeyCode.R))
+            if (Input.touchCount > 0 && Input.touches[0].phase == TouchPhase.Began)
             {
                 lossText.gameObject.SetActive(false);
                 difficulty = 1;
