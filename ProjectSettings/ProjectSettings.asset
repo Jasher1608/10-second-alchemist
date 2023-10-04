@@ -11,7 +11,7 @@ PlayerSettings:
   defaultScreenOrientation: 4
   targetDevice: 2
   useOnDemandResources: 0
-  accelerometerFrequency: 60
+  accelerometerFrequency: 0
   companyName: DefaultCompany
   productName: 10 second alchemist
   defaultCursor: {fileID: 2800000, guid: 2949e69b166f9854ba61fd58ad662f9a, type: 3}
