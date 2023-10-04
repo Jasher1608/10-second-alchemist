@@ -6,6 +6,6 @@ public class SetFPS : MonoBehaviour
 {
     private void Awake()
     {
-        Application.targetFrameRate = 60;
+        Application.targetFrameRate = 120;
     }
 }
