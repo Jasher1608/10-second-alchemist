@@ -7459,9 +7459,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '<incr>Failed!</>
-
-    Tap anywhere to try again'
+  m_text: <incr>Failed!</>
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8c82f5233ac028b4ca2ece952980610a, type: 2}
   m_sharedMaterial: {fileID: -115147388619095193, guid: 8c82f5233ac028b4ca2ece952980610a, type: 2}
