@@ -28,8 +28,14 @@ public class GameController : MonoBehaviour
     [SerializeField] private TextMeshProUGUI lossText;
     [SerializeField] private TextMeshProUGUI winText;
     [SerializeField] private TextMeshProUGUI timerText;
+    [SerializeField] private Button tryAgainButton;
 
     private string nextScene;
+
+    private void Awake()
+    {
+        tryAgainButton.onClick.AddListener(TryAgain);
+    }
 
     private void Start()
     {
@@ -80,15 +86,6 @@ public class GameController : MonoBehaviour
             if (difficulty > 3 && level == 3 && Input.touchCount > 0 && (Input.touches[0].phase == TouchPhase.Began) || Input.GetKeyUp(KeyCode.R))
             {
                 StartCoroutine(LoadNextScene(0.75f));
-            }
-        }
-        else if (state == State.OutroLose)
-        {
-            if (Input.touchCount > 0 && Input.touches[0].phase == TouchPhase.Began || Input.GetKeyUp(KeyCode.R))
-            {
-                lossText.gameObject.SetActive(false);
-                difficulty = 1;
-                Start();
             }
         }
     }
@@ -236,6 +233,7 @@ public class GameController : MonoBehaviour
     private void StartOutroLose()
     {
         lossText.gameObject.SetActive(true);
+        tryAgainButton.gameObject.SetActive(true);
     }
 
     private void SpinBoard()
@@ -247,6 +245,14 @@ public class GameController : MonoBehaviour
     {
         yield return new WaitForSeconds(seconds);
         SceneManager.LoadScene(nextScene, LoadSceneMode.Single);
+    }
+
+    private void TryAgain()
+    {
+        lossText.gameObject.SetActive(false);
+        tryAgainButton.gameObject.SetActive(false);
+        difficulty = 1;
+        Start();
     }
 }
 
